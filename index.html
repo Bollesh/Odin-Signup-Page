@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="script1.js" defer></script>
+</head>
+<body>
+    <div class="bgImage"></div>
+    <div class="logoBox noDisp">
+        <div class="logo">
+            <img src="images/odin-lined.png" alt="" class="odin">
+            <p>The Odin Project</p>
+        </div>
+        <legend>Sign Up</legend>
+    </div>
+    <div class="mainPage">
+        <div class="mainCont">
+            <div class="logo">
+                <img src="images/odin-lined.png" alt="" class="odin">
+                <p>The Odin Project</p>
+            </div>
+            <div class="body">Welcome to Odin <br> Sign up to get started</div>
+            <button class="signupBtn">SIGN UP</button>
+            <div class="breakLine">
+                <div class="left line"></div>
+                <p>
+                or continue with 
+                </p>
+                <div class="right line"></div>
+            </div>
+            <div class="loginOptions">
+                <div class="github opt">
+
+                </div>
+                <div class="gmail opt">
+
+                </div>
+            </div>
+        </div>
+        <div class="formCont">
+            <form action="" method="post" class="noDisp">
+                <div class="usernameBox">
+                    <label for="username">Username</label>  
+                    <input type="text" name="username" id="username" minlength="3" required>
+                </div>
+                <div class="emailBox">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div class="passwordBox">
+                    <label for="password">
+                        Password
+                        <div id="bad" class="circle"></div>
+                        <div id="ok" class="circle"></div>
+                        <div id="good" class="circle"></div>
+                    </label>
+                    <input type="password" name="password" id="password" minlength="8" required>
+                </div>
+                <div class="passcheckBox">
+                    <label for="passCheck">Confirm Password</label>
+                    <input type="password" name="passCheck" id="passCheck" required>
+                </div>
+                <button type="submit" id="submitBtn">Create Account</button>
+            </form>
+        </div>
+    </div>
+    <p class="imageCourtesy">
+        Image by <a target="_blank" href="https://unsplash.com/@samimatias">Sami Matias</a> from <a target="_blank" href="https://unsplash.com/">Unsplash</a>
+    </p>
+    <p class="Odin">
+        The actual <a target="_blank" href="https://www.theodinproject.com/">Odin Project</a>
+    </p>
+</body>
+</html>
