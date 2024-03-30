@@ -39,6 +39,8 @@ passInp.addEventListener('input', ()=>{
     }
     if(/[A-Z]|[a-z]/.test(passInp.value) || /[0-9]/.test(passInp.value) || /[\W]/.test(passInp.value)){
         document.getElementById('bad').style.opacity = "1";
+        document.getElementById('ok').style.opacity = "0.2";
+        document.getElementById('good').style.opacity = "0.2";
     }
     if(/[A-Za-z]/.test(passInp.value) && /[0-9]/.test(passInp.value) || /[A-Za-z]/.test(passInp.value) && /[\W]/.test(passInp.value) || /[0-9]/.test(passInp.value) && /[\W]/.test(passInp.value)){
         document.getElementById('ok').style.opacity = "1";
@@ -46,21 +48,14 @@ passInp.addEventListener('input', ()=>{
     if(/[A-Za-z]/.test(passInp.value) && /[\W]/.test(passInp.value) && /[\W]/.test(passInp.value)){
         document.getElementById('good').style.opacity = "1";
     }
+
+    if(passCheck.value != ''){
+        confirmPass();
+    }
 });
 
 passCheck.addEventListener('input', ()=>{
-    if(passMatch()){
-        document.querySelector(`label[for = "${passCheck.id}"]`).style.textShadow = "1px 1px 1px green";
-        document.querySelector(`label[for = "${passCheck.id}"]`).style.color = "rgb(200,255,200)";
-        document.querySelector(`label[for = "${passInp.id}"]`).style.textShadow = "1px 1px 1px green";
-        document.querySelector(`label[for = "${passInp.id}"]`).style.color = "rgb(200,255,200)";
-        document.querySelector(`label[for = "${passCheck.id}"]`).innerHTML = "Confirm Password";
-    }
-    else{
-        document.querySelector(`label[for = "${passCheck.id}"]`).style.textShadow = "0 0 1px red";
-        document.querySelector(`label[for = "${passCheck.id}"]`).style.color = "rgb(255,200,200)";
-        document.querySelector(`label[for = "${passCheck.id}"]`).innerHTML = "Confirm Password (passwords don't match)";
-    }
+    confirmPass();
 });
 
 submitBtn.addEventListener('click', (evt)=>{
@@ -75,5 +70,20 @@ function passMatch(){
     }
     else{
         return false;
+    }
+}
+
+function confirmPass(){
+    if(passMatch()){
+        document.querySelector(`label[for = "${passCheck.id}"]`).style.textShadow = "1px 1px 1px green";
+        document.querySelector(`label[for = "${passCheck.id}"]`).style.color = "rgb(200,255,200)";
+        document.querySelector(`label[for = "${passInp.id}"]`).style.textShadow = "1px 1px 1px green";
+        document.querySelector(`label[for = "${passInp.id}"]`).style.color = "rgb(200,255,200)";
+        document.querySelector(`label[for = "${passCheck.id}"]`).innerHTML = "Confirm Password";
+    }
+    else{
+        document.querySelector(`label[for = "${passCheck.id}"]`).style.textShadow = "0 0 1px red";
+        document.querySelector(`label[for = "${passCheck.id}"]`).style.color = "rgb(255,200,200)";
+        document.querySelector(`label[for = "${passCheck.id}"]`).innerHTML = "Confirm Password (passwords don't match)";
     }
 }
